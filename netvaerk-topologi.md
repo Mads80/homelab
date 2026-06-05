@@ -17,26 +17,26 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 
 ## Simpelt netværksdiagram (tabel)
 
-| Device | Type | Parent | IP / Hostname | VLAN | Notes |
-|---|---|---|---|---:|---|
-| Internet | Netværk | - | - | - | EWII Bredbånd |
-| Cloud Gateway Ultra | Router / Gateway | Internet | - | 1 | Hovedgateway |
-| moodeaudio | Raspberry Pi | Cloud Gateway Ultra | 192.168.1.248 | 1 | moodeaudio |
-| U7 Lite | Access point | Cloud Gateway Ultra | - | 1 | Trådløst access point |
-| Skynet (SSID) | Wireless network | U7 Lite | - | 1 | Primært klient-netværk |
-| MacBook Air M4 | Client | Skynet | 192.168.1.114 | 1 | Laptop |
-| iPhone | Client | Skynet | 192.168.1.225 | 1 | Mobiltelefon |
-| iPad 10.2 (9th Gen) | Client | Skynet | 192.168.1.177 | 1 | Tablet |
-| Fedora (distro) | Client | Skynet | 192.168.1.72 | 1 | Fedora-baseret workstation |
-| Skynet IoT (SSID) | Wireless network | U7 Lite | - | 10 | IoT-netværk for smarthome-enheder |
-| Atomi (wlan0) | IoT device | Skynet IoT | 192.168.10.204 | 10 | Atomi wlan0 |
-| Atomi (wlan0) | IoT device | Skynet IoT | 192.168.10.104 | 10 | Atomi wlan0 |
-| Atomi (wlan0) | IoT device | Skynet IoT | 192.168.10.44  | 10 | Atomi wlan0 |
-| USW Flex Mini | Switch | Cloud Gateway Ultra | - | 1 | Edge switch |
-| homeassistant | Server | USW Flex Mini | 192.168.1.103 | 1 | Home Assistant server |
-| lv-178 | Proxmox VE node | USW Flex Mini | 192.168.1.12 | 1 | Proxmox cluster |
-| lv-223 | Proxmox VE node | USW Flex Mini | 192.168.1.11 | 1 | Proxmox cluster |
-| lv-426 | Proxmox VE node | USW Flex Mini | 192.168.1.10 | 1 | Proxmox cluster |
+| Device | Category | Type | Parent | IP / Hostname | VLAN | Notes |
+|---|---|---|---|---|---:|---|
+| Internet | Infrastructure | Netværk | - | - | - | EWII Bredbånd |
+| Cloud Gateway Ultra | Router | Router / Gateway | Internet | - | 1 | Hovedgateway |
+| U7 Lite | Access point | Access point | Cloud Gateway Ultra | - | 1 | Trådløst access point |
+| USW Flex Mini | Switch | Switch | Cloud Gateway Ultra | - | 1 | Edge switch |
+| moodeaudio | Endpoint | Raspberry Pi | Cloud Gateway Ultra | 192.168.1.248 | 1 | moodeaudio |
+| Skynet (SSID) | Wireless | Wireless network | U7 Lite | - | 1 | Primært klient-netværk |
+| MacBook Air M4 | Client | Laptop | Skynet | 192.168.1.114 | 1 | Laptop |
+| iPhone | Client | Mobil | Skynet | 192.168.1.225 | 1 | Mobiltelefon |
+| iPad 10.2 (9th Gen) | Client | Tablet | Skynet | 192.168.1.177 | 1 | Tablet |
+| Fedora (distro) | Client | Workstation | Skynet | 192.168.1.72 | 1 | Fedora-baseret workstation |
+| Skynet IoT (SSID) | Wireless | Wireless network | U7 Lite | - | 10 | IoT-netværk for smarthome-enheder |
+| Atomi (wlan0) | IoT device | IoT device | Skynet IoT | 192.168.10.204 | 10 | Atomi wlan0 |
+| Atomi (wlan0) | IoT device | IoT device | Skynet IoT | 192.168.10.104 | 10 | Atomi wlan0 |
+| Atomi (wlan0) | IoT device | IoT device | Skynet IoT | 192.168.10.44  | 10 | Atomi wlan0 |
+| homeassistant | Server | Server | USW Flex Mini | 192.168.1.103 | 1 | Home Assistant server |
+| lv-178 | Infrastructure | Proxmox VE node | USW Flex Mini | 192.168.1.12 | 1 | Proxmox cluster |
+| lv-223 | Infrastructure | Proxmox VE node | USW Flex Mini | 192.168.1.11 | 1 | Proxmox cluster |
+| lv-426 | Infrastructure | Proxmox VE node | USW Flex Mini | 192.168.1.10 | 1 | Proxmox cluster |
 
 ## Forslag til næste skridt
 
