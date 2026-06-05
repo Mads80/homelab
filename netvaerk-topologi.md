@@ -24,13 +24,13 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 | Internet | Netværk | - | - | - | EWII Bredbånd |
 | Cloud Gateway Ultra | Router / Gateway | Internet | 192.168.1.1 | 1 | Hovedgateway |
 | U7 Lite | Access point (AP) | Cloud Gateway Ultra | 192.168.1.187 | 1 | Trådløst access point |
-| Skynet (SSID) | Wireless network | U7 Lite | - | 1 | Primært klient-netværk |
 | USW Flex Mini | Switch | Cloud Gateway Ultra | 192.168.1.168 | 1 | Edge switch |
 
 ### Servers og endpoints (VLAN 1)
 
 | Device | Type | Parent | IP / Hostname | VLAN | Notes |
 |---|---|---|---|---:|---|
+| Skynet (SSID) | Wireless network | U7 Lite | - | 1 | Primært klient-netværk |
 | moodeaudio | Raspberry Pi | Cloud Gateway Ultra | 192.168.1.248 | 1 | moodeaudio |
 | homeassistant | Server | USW Flex Mini | 192.168.1.103 | 1 | Home Assistant server |
 | MacBook Air M4 | Client | Skynet | 192.168.1.114 | 1 | Laptop |
@@ -46,7 +46,6 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 | Device | Type | Parent | IP / Hostname | VLAN | Notes |
 |---|---|---|---|---:|---|
 | Skynet IoT (SSID) | Wireless network | U7 Lite | - | 10 | IoT-netværk (isoleret VLAN 10) |
-| Skynet (SSID) | Wireless network | U7 Lite | - | 1 | Primært klient-netværk |
 | Atomi (wlan0) | IoT device | Skynet IoT | 192.168.10.204 | 10 | Atomi wlan0 |
 | Atomi (wlan0) | IoT device | Skynet IoT | 192.168.10.104 | 10 | Atomi wlan0 |
 | Atomi (wlan0) | IoT device | Skynet IoT | 192.168.10.44 | 10 | Atomi wlan0 |
