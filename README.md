@@ -36,3 +36,4 @@ Personlig dokumentation til mit homelab.
 * [ ] Dokumenter cluster setup
 * [ ] Dokumenter DNS setup
 * [ ] Dokumenter backup strategi
+* [ ] Tilføj installationsvejledning for NixOS og Fedora Workstation (inkl. startskabelon, required packages og konfigurations-eksempler)
