@@ -15,7 +15,7 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 | 192.168.1.11 | lv-223.nos | Proxmox VE node (Proxmox cluster) |
 | 192.168.1.12 | lv-178.nos | Proxmox VE node (Proxmox cluster) |
 
-## Simpelt netværksdiagram (tabel)
+## Simpel netværkstabel
 
 ### Infrastruktur (netværkshardware)
 
@@ -24,6 +24,7 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 | Internet | Netværk | - | - | - | EWII Bredbånd |
 | Cloud Gateway Ultra | Router / Gateway | Internet | 192.168.1.1 | 1 | Hovedgateway |
 | U7 Lite | Access point (AP) | Cloud Gateway Ultra | 192.168.1.187 | 1 | Trådløst access point |
+| Skynet (SSID) | Wireless network | U7 Lite | - | 1 | Primært klient-netværk |
 | USW Flex Mini | Switch | Cloud Gateway Ultra | 192.168.1.168 | 1 | Edge switch |
 
 ### Servers og endpoints (VLAN 1)
@@ -45,6 +46,7 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 | Device | Type | Parent | IP / Hostname | VLAN | Notes |
 |---|---|---|---|---:|---|
 | Skynet IoT (SSID) | Wireless network | U7 Lite | - | 10 | IoT-netværk (isoleret VLAN 10) |
+| Skynet (SSID) | Wireless network | U7 Lite | - | 1 | Primært klient-netværk |
 | Atomi (wlan0) | IoT device | Skynet IoT | 192.168.10.204 | 10 | Atomi wlan0 |
 | Atomi (wlan0) | IoT device | Skynet IoT | 192.168.10.104 | 10 | Atomi wlan0 |
 | Atomi (wlan0) | IoT device | Skynet IoT | 192.168.10.44 | 10 | Atomi wlan0 |
