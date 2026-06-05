@@ -1,4 +1,38 @@
-# docs
-Documentaion for my homelab
+# Homelab Documentation
 
-Første edit.
+Personlig dokumentation til mit homelab.
+
+## Infrastruktur
+
+* Proxmox Cluster
+* Home Assistant
+* Pi-hole / DNS
+* Jellyfin
+* NixOS
+* Fedora Workstation
+
+## Dokumentation
+
+### Proxmox
+
+* Cluster
+* Storage
+* Backups
+
+### Home Assistant
+
+* Dashboards
+* Integrationer
+* Automatiseringer
+
+### Netværk
+
+* DNS
+* VLANs
+* Firewall
+
+## TODO
+
+* [ ] Dokumenter cluster setup
+* [ ] Dokumenter DNS setup
+* [ ] Dokumenter backup strategi
