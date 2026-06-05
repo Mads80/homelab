@@ -17,33 +17,43 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 
 ## Simpelt netværksdiagram (kasse-format)
 
-🌍 Internet (EWII)
-│
-└── 🛜 Cloud Gateway Ultra
-    │
-    ├── 🎵 moodeaudio (Raspberry Pi)
-    │
-    ├── 📡 U7 Lite
-    │   │
-    │   ├── 🏠 Skynet
-    │   │   ├── 💻 Fedora Workstation
-    │   │   ├── 🍎 MacBook Air M4
-    │   │   ├── 📱 iPhone
-    │   │   └── 📱 iPad 10.2
-    │   │
-    │   └── 🔒 Skynet IoT
-    │       ├── 🔊 Echo #1
-    │       ├── 🔊 Echo #2
-    │       └── 🔊 Echo #3
-    │
-    └── 🔀 USW Flex Mini
-        │
-        ├── 🏡 Home Assistant
-        │
-        └── 🖥️ Proxmox Cluster
-            ├── lv-178
-            ├── lv-223
-            └── lv-426
+# Netværk
+
+## Internet
+- EWII Bredbånd
+
+## Router
+- Cloud Gateway Ultra
+
+## Trådløst
+
+### Access Point
+- U7 Lite
+
+### Skynet
+- Fedora Workstation
+- MacBook Air M4
+- iPhone
+- iPad 10.2 (9th Gen)
+
+### Skynet IoT
+- Echo #1
+- Echo #2
+- Echo #3
+
+## Kablet
+
+### Switch
+- USW Flex Mini
+
+### Enheder
+- Home Assistant
+- moodeaudio (Raspberry Pi)
+
+## Proxmox Cluster
+- lv-178
+- lv-223
+- lv-426
 
 ## Forslag til næste skridt
 
