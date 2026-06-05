@@ -26,7 +26,7 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 | U7 Lite | Access point (AP) | Cloud Gateway Ultra | 192.168.1.187 | - | Trådløst access point |
 | USW Flex Mini | Switch | Cloud Gateway Ultra | 192.168.1.168 | - | Edge switch |
 
-### Servers og endpoints (VLAN 1)
+### VLAN 1
 
 | Device | Type | Parent | IP | Hostname | Notes |
 |---|---|---|---|---|---|
@@ -41,7 +41,7 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 | lv-223 | Proxmox VE node | USW Flex Mini | 192.168.1.11 | lv-223.nos | Proxmox cluster |
 | lv-426 | Proxmox VE node | USW Flex Mini | 192.168.1.10 | lv-426.nos | Proxmox cluster |
 
-### IoT (VLAN 10)
+### VLAN 10 (Isolated IoT Network)
 
 | Device | Type | Parent | IP | Hostname | Notes |
 |---|---|---|---|---|---|
