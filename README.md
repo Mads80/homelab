@@ -10,6 +10,14 @@ Personal documentation for my homelab. This README now contains a consolidated o
 - Documentation
 - TODO
 
+## Hardware
+
+- 3× Lenovo ThinkCentre M920q — 16 GB RAM, 256 GB SSD
+- Raspberry Pi 3 Model B with HiFiBerry AMP+ HAT
+- Cloud Gateway Ultra
+- USW Flex Mini
+- U7 Lite
+
 ## Infrastructure
 
 - Proxmox Cluster
