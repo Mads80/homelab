@@ -18,14 +18,23 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 ## Simpelt netværksdiagram (ASCII)
 
 Internet
-  |
-  |  [Router / Firewall]  (192.168.1.1)
-  |
-  +--[Core Switch]
-      |-- lv-426.nos (192.168.1.10)
-      |-- lv-223.nos (192.168.1.11)
-      |-- lv-178.nos (192.168.1.12)
-      |-- (andre enheder: NAS, router admin, access points, osv.)
+└── Cloud Gateway Ultra
+    ├── moodeaudio (Raspberry Pi)
+    ├── U7 Lite
+    │   ├── Skynet
+    │   │   ├── MacBook Air M4
+    │   │   ├── iPhone
+    │   │   ├── iPad
+    │   │   └── Fedora PC
+    │   └── Skynet IoT
+    │       ├── Echo 1
+    │       ├── Echo 2
+    │       └── Echo 3
+    └── USW Flex Mini
+        ├── homeassistant
+        ├── lv-178
+        ├── lv-223
+        └── lv-426
 
 ## Forslag til næste skridt
 
