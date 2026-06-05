@@ -15,26 +15,49 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 | 192.168.1.11 | lv-223.nos | (Udfyld rolle) |
 | 192.168.1.12 | lv-178.nos | (Udfyld rolle) |
 
-## Simpelt netværksdiagram (ASCII)
+## Simpelt netværksdiagram (kasse-format)
 
-Internet
-└── Cloud Gateway Ultra
-    ├── moodeaudio (Raspberry Pi)
-    ├── U7 Lite
-    │   ├── Skynet
-    │   │   ├── MacBook Air M4
-    │   │   ├── iPhone
-    │   │   ├── iPad
-    │   │   └── Fedora PC
-    │   └── Skynet IoT
-    │       ├── Echo 1
-    │       ├── Echo 2
-    │       └── Echo 3
-    └── USW Flex Mini
-        ├── homeassistant
-        ├── lv-178
-        ├── lv-223
-        └── lv-426
+```
++--------------------+
+|      Internet      |
++---------+----------+
+          |
++---------------------------+
+|  Cloud Gateway Ultra      |
++------+--------+-----------+
+       |        |
+  +----+----+   +-------------+
+  | moode   |   |   U7 Lite   |
+  | audio   |   +--+---+------+ 
+  +---------+      |   |
+                   |   |    +----------------+
+                   |   |    |    Skynet      |
+                   |   |    +--+---+---+-----+
+                   |   |       |   |   |  |
+                   |   |       |   |   |  +-- Fedora PC
+                   |   |       |   |   +----- iPad
+                   |   |       |   +--------- iPhone
+                   |   |       +----------- MacBook Air M4
+                   |   |
+                   |   +----------------+
+                   |                    |
+                   |                +---+-----------+
+                   |                |  Skynet IoT   |
+                   |                +----+---+------+ 
+                   |                     |   |
+                   |                     |   +-- Echo 3
+                   |                     +------ Echo 2
+                   |                            Echo 1
+                   |
+                   +----------------------+
+                   |    USW Flex Mini     |
+                   +----+----+----+-------+
+                        |    |    |
+                        |    |    +-- lv-426
+                        |    +------- lv-223
+                        +------------ lv-178
+                        +------------ homeassistant
+```
 
 ## Forslag til næste skridt
 
