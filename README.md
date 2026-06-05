@@ -26,6 +26,7 @@ This section describes the current network topology and active servers.
 | 192.168.1.10 | lv-426.nos | Proxmox VE node (Proxmox cluster) |
 | 192.168.1.11 | lv-223.nos | Proxmox VE node (Proxmox cluster) |
 | 192.168.1.12 | lv-178.nos | Proxmox VE node (Proxmox cluster) |
+| 192.168.1.248 | moode.nos | moodeaudio |
 
 ### Simple network tables
 
