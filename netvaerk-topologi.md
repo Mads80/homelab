@@ -31,15 +31,15 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 | Device | Type | Parent | IP / Hostname | VLAN | Notes |
 |---|---|---|---|---:|---|
 | Skynet (SSID) | Wireless network | U7 Lite | - | 1 | Primært klient-netværk |
-| moodeaudio | Raspberry Pi | Cloud Gateway Ultra | 192.168.1.248 | 1 | moodeaudio |
-| homeassistant | Server | USW Flex Mini | 192.168.1.103 | 1 | Home Assistant server |
+| moodeaudio | Raspberry Pi | Cloud Gateway Ultra | 192.168.1.248 / moode.nos | 1 | moodeaudio |
+| homeassistant | Server | USW Flex Mini | 192.168.1.103 / ha.nos:8123 | 1 | Home Assistant server |
 | MacBook Air M4 | Client | Skynet | 192.168.1.114 | 1 | Laptop |
 | iPhone | Client | Skynet | 192.168.1.225 | 1 | Mobiltelefon |
 | iPad 10.2 (9th Gen) | Client | Skynet | 192.168.1.177 | 1 | Tablet |
-| Fedora (distro) | Client | Skynet | 192.168.1.72 | 1 | Fedora-baseret workstation |
-| lv-178 | Proxmox VE node | USW Flex Mini | 192.168.1.12 | 1 | Proxmox cluster |
-| lv-223 | Proxmox VE node | USW Flex Mini | 192.168.1.11 | 1 | Proxmox cluster |
-| lv-426 | Proxmox VE node | USW Flex Mini | 192.168.1.10 | 1 | Proxmox cluster |
+| Fedora | Client | Skynet | 192.168.1.72 | 1 | Fedora-baseret workstation |
+| lv-178 | Proxmox VE node | USW Flex Mini | 192.168.1.12 / lv-178.nos | 1 | Proxmox cluster |
+| lv-223 | Proxmox VE node | USW Flex Mini | 192.168.1.11 / lv-223.nos | 1 | Proxmox cluster |
+| lv-426 | Proxmox VE node | USW Flex Mini | 192.168.1.10 / lv-426.nos| 1 | Proxmox cluster |
 
 ### IoT (VLAN 10)
 
