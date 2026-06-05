@@ -11,9 +11,9 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 
 | IP | Hostname | Rolle / noter |
 |---|---|---|
-| 192.168.1.10 | lv-426.nos | (Udfyld rolle: f.eks. Proxmox / VM-host / tjeneste) |
-| 192.168.1.11 | lv-223.nos | (Udfyld rolle) |
-| 192.168.1.12 | lv-178.nos | (Udfyld rolle) |
+| 192.168.1.10 | lv-426.nos | Proxmox VE node (Proxmox cluster) |
+| 192.168.1.11 | lv-223.nos | Proxmox VE node (Proxmox cluster) |
+| 192.168.1.12 | lv-178.nos | Proxmox VE node (Proxmox cluster) |
 
 ## Simpelt netværksdiagram (kasse-format)
 
@@ -53,9 +53,9 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
                    |    USW Flex Mini     |
                    +----+----+----+-------+
                         |    |    |
-                        |    |    +-- lv-426
-                        |    +------- lv-223
-                        +------------ lv-178
+                        |    |    +-- lv-426 (Proxmox cluster)
+                        |    +------- lv-223 (Proxmox cluster)
+                        +------------ lv-178 (Proxmox cluster)
                         +------------ homeassistant
 ```
 
