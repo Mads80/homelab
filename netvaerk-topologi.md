@@ -15,45 +15,28 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 | 192.168.1.11 | lv-223.nos | Proxmox VE node (Proxmox cluster) |
 | 192.168.1.12 | lv-178.nos | Proxmox VE node (Proxmox cluster) |
 
-## Simpelt netværksdiagram (kasse-format)
+## Simpelt netværksdiagram (tabel)
 
-# Netværk
-
-## Internet
-- EWII Bredbånd
-
-## Router
-- Cloud Gateway Ultra
-
-## Trådløst
-
-### Access Point
-- U7 Lite
-
-### Skynet
-- Fedora Workstation
-- MacBook Air M4
-- iPhone
-- iPad 10.2 (9th Gen)
-
-### Skynet IoT
-- Echo #1
-- Echo #2
-- Echo #3
-
-## Kablet
-
-### Switch
-- USW Flex Mini
-
-### Enheder
-- Home Assistant
-- moodeaudio (Raspberry Pi)
-
-## Proxmox Cluster
-- lv-178
-- lv-223
-- lv-426
+| Device | Type | Parent | IP / Hostname | Notes |
+|---|---|---|---|---|
+| Internet | Netværk | - | - | EWII Bredbånd |
+| Cloud Gateway Ultra | Router / Gateway | Internet | - | Hovedgateway |
+| moodeaudio | Raspberry Pi | Cloud Gateway Ultra | - | moodeaudio |
+| U7 Lite | Access point | Cloud Gateway Ultra | - | Trådløst access point |
+| Skynet (SSID) | Wireless network | U7 Lite | - | Primært klient-netværk |
+| MacBook Air M4 | Client | Skynet | - | Laptop |
+| iPhone | Client | Skynet | - | Mobiltelefon |
+| iPad 10.2 (9th Gen) | Client | Skynet | - | Tablet |
+| Fedora Workstation | Client | Skynet | - | Desktop/laptop |
+| Skynet IoT (SSID) | Wireless network | U7 Lite | - | IoT-netværk for smarthome-enheder |
+| Echo 1 | IoT device | Skynet IoT | - | Alexa-enhed |
+| Echo 2 | IoT device | Skynet IoT | - | Alexa-enhed |
+| Echo 3 | IoT device | Skynet IoT | - | Alexa-enhed |
+| USW Flex Mini | Switch | Cloud Gateway Ultra | - | Edge switch |
+| homeassistant | Server | USW Flex Mini | - | Home Assistant server |
+| lv-178 | Proxmox VE node | USW Flex Mini | 192.168.1.12 | Proxmox cluster |
+| lv-223 | Proxmox VE node | USW Flex Mini | 192.168.1.11 | Proxmox cluster |
+| lv-426 | Proxmox VE node | USW Flex Mini | 192.168.1.10 | Proxmox cluster |
 
 ## Forslag til næste skridt
 
