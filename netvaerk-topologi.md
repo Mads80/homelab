@@ -17,7 +17,7 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 
 ## Simpel netværkstabel
 
-### Infrastruktur (netværkshardware)
+### Infrastruktur (fysisk og logisk)
 
 | Device | Rolle | Parent | IP | Hostname | Notes |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 | U7 Lite | Access point (AP) | Cloud Gateway Ultra | 192.168.1.187 | - | Trådløst access point |
 | USW Flex Mini | Switch | Cloud Gateway Ultra | 192.168.1.168 | - | Edge switch |
 
-### VLAN 1
+### VLAN 1 (primært klient-netværk)
 
 | Device | Type | Parent | IP | Hostname | Notes |
 |---|---|---|---|---|---|
@@ -41,7 +41,7 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 | lv-223 | Proxmox VE node | USW Flex Mini | 192.168.1.11 | lv-223.nos | Proxmox cluster |
 | lv-426 | Proxmox VE node | USW Flex Mini | 192.168.1.10 | lv-426.nos | Proxmox cluster |
 
-### VLAN 10 (Isolated IoT Network)
+### VLAN 10 (isoleret IoT Netværk)
 
 | Device | Type | Parent | IP | Hostname | Notes |
 |---|---|---|---|---|---|
