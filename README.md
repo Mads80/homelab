@@ -46,10 +46,7 @@ This section describes the current network topology and active servers.
 | Skynet (SSID) | Wireless network | U7 Lite | - | - | Primary client network |
 | moodeaudio | Raspberry Pi | Cloud Gateway Ultra | 192.168.1.248 | moode.nos | moodeaudio |
 | homeassistant | Server | USW Flex Mini | 192.168.1.103 | ha.nos:8123 | Home Assistant server |
-| MacBook Air M4 | Client | Skynet | 192.168.1.114 | - | Laptop |
-| iPhone | Client | Skynet | 192.168.1.225 | - | Mobile phone |
-| iPad 10.2 (9th Gen) | Client | Skynet | 192.168.1.177 | - | Tablet |
-| Fedora | Client | Skynet | 192.168.1.72 | - | Fedora-based workstation |
+| Pi-hole | DNS Server | USW Flex Mini | 192.168.1.127 | pihole.nos | Pi-hole DNS server |
 | lv-178 | Proxmox VE node | USW Flex Mini | 192.168.1.12 | lv-178.nos | Proxmox cluster |
 | lv-223 | Proxmox VE node | USW Flex Mini | 192.168.1.11 | lv-223.nos | Proxmox cluster |
 | lv-426 | Proxmox VE node | USW Flex Mini | 192.168.1.10 | lv-426.nos | Proxmox cluster |
