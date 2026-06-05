@@ -17,7 +17,7 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 
 ## Simpel netværkstabel
 
-### Infrastruktur (fysisk og logisk)
+### Infrastruktur (fysiske enheder og hovedgateway)
 
 | Device | Rolle | Parent | IP | Hostname | Notes |
 |---|---|---|---|---|---|
@@ -41,7 +41,7 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 | lv-223 | Proxmox VE node | USW Flex Mini | 192.168.1.11 | lv-223.nos | Proxmox cluster |
 | lv-426 | Proxmox VE node | USW Flex Mini | 192.168.1.10 | lv-426.nos | Proxmox cluster |
 
-### VLAN 10 (isoleret IoT Netværk)
+### VLAN 10 (isoleret IoT-netværk)
 
 | Device | Type | Parent | IP | Hostname | Notes |
 |---|---|---|---|---|---|
