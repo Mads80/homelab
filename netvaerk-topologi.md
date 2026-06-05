@@ -17,26 +17,37 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 
 ## Simpelt netværksdiagram (tabel)
 
-| Device | Type | Parent | IP / Hostname | VLAN | Notes |
+### Infrastruktur (netværkshardware)
+
+| Device | Rolle | Parent | IP / Hostname | VLAN | Notes |
 |---|---|---|---|---:|---|
 | Internet | Netværk | - | - | - | EWII Bredbånd |
-| <mark>Cloud Gateway Ultra</mark> | <mark>Router / Gateway</mark> | <mark>Internet</mark> | <mark>-</mark> | <mark>1</mark> | <mark>Hovedgateway</mark> |
+| Cloud Gateway Ultra | Router / Gateway | Internet | - | 1 | Hovedgateway |
+| U7 Lite | Access point (AP) | Cloud Gateway Ultra | - | 1 | Trådløst access point |
+| USW Flex Mini | Switch | Cloud Gateway Ultra | - | 1 | Edge switch |
+
+### Servers og endpoints (VLAN 1)
+
+| Device | Type | Parent | IP / Hostname | VLAN | Notes |
+|---|---|---|---|---:|---|
 | moodeaudio | Raspberry Pi | Cloud Gateway Ultra | 192.168.1.248 | 1 | moodeaudio |
-| <mark>U7 Lite</mark> | <mark>Access point</mark> | <mark>Cloud Gateway Ultra</mark> | <mark>-</mark> | <mark>1</mark> | <mark>Trådløst access point (AP)</mark> |
-| Skynet (SSID) | Wireless network | U7 Lite | - | 1 | Primært klient-netværk |
+| homeassistant | Server | USW Flex Mini | 192.168.1.103 | 1 | Home Assistant server |
 | MacBook Air M4 | Client | Skynet | 192.168.1.114 | 1 | Laptop |
 | iPhone | Client | Skynet | 192.168.1.225 | 1 | Mobiltelefon |
 | iPad 10.2 (9th Gen) | Client | Skynet | 192.168.1.177 | 1 | Tablet |
 | Fedora (distro) | Client | Skynet | 192.168.1.72 | 1 | Fedora-baseret workstation |
-| Skynet IoT (SSID) | Wireless network | U7 Lite | - | 10 | IoT-netværk (isoleret VLAN 10) |
-| Atomi (wlan0) | IoT device | Skynet IoT | 192.168.10.204 | 10 | Atomi wlan0 |
-| Atomi (wlan0) | IoT device | Skynet IoT | 192.168.10.104 | 10 | Atomi wlan0 |
-| Atomi (wlan0) | IoT device | Skynet IoT | 192.168.10.44  | 10 | Atomi wlan0 |
-| <mark>USW Flex Mini</mark> | <mark>Switch</mark> | <mark>Cloud Gateway Ultra</mark> | <mark>-</mark> | <mark>1</mark> | <mark>Edge switch</mark> |
-| homeassistant | Server | USW Flex Mini | 192.168.1.103 | 1 | Home Assistant server |
 | lv-178 | Proxmox VE node | USW Flex Mini | 192.168.1.12 | 1 | Proxmox cluster |
 | lv-223 | Proxmox VE node | USW Flex Mini | 192.168.1.11 | 1 | Proxmox cluster |
 | lv-426 | Proxmox VE node | USW Flex Mini | 192.168.1.10 | 1 | Proxmox cluster |
+
+### IoT (VLAN 10)
+
+| Device | Type | Parent | IP / Hostname | VLAN | Notes |
+|---|---|---|---|---:|---|
+| Skynet IoT (SSID) | Wireless network | U7 Lite | - | 10 | IoT-netværk (isoleret VLAN 10) |
+| Atomi (wlan0) | IoT device | Skynet IoT | 192.168.10.204 | 10 | Atomi wlan0 |
+| Atomi (wlan0) | IoT device | Skynet IoT | 192.168.10.104 | 10 | Atomi wlan0 |
+| Atomi (wlan0) | IoT device | Skynet IoT | 192.168.10.44 | 10 | Atomi wlan0 |
 
 ## Forslag til næste skridt
 
