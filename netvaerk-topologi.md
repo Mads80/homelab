@@ -22,9 +22,9 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 | Device | Rolle | Parent | IP / Hostname | VLAN | Notes |
 |---|---|---|---|---:|---|
 | Internet | Netværk | - | - | - | EWII Bredbånd |
-| Cloud Gateway Ultra | Router / Gateway | Internet | - | 1 | Hovedgateway |
-| U7 Lite | Access point (AP) | Cloud Gateway Ultra | - | 1 | Trådløst access point |
-| USW Flex Mini | Switch | Cloud Gateway Ultra | - | 1 | Edge switch |
+| Cloud Gateway Ultra | Router / Gateway | Internet | 192.168.1.1 | 1 | Hovedgateway |
+| U7 Lite | Access point (AP) | Cloud Gateway Ultra | 192.168.1.187 | 1 | Trådløst access point |
+| USW Flex Mini | Switch | Cloud Gateway Ultra | 192.168.1.168 | 1 | Edge switch |
 
 ### Servers og endpoints (VLAN 1)
 
