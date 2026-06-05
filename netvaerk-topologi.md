@@ -17,26 +17,26 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 
 ## Simpelt netværksdiagram (tabel)
 
-| Device | Type | Parent | IP / Hostname | Notes |
-|---|---|---|---|---|
-| Internet | Netværk | - | - | EWII Bredbånd |
-| Cloud Gateway Ultra | Router / Gateway | Internet | - | Hovedgateway |
-| moodeaudio | Raspberry Pi | Cloud Gateway Ultra | - | moodeaudio |
-| U7 Lite | Access point | Cloud Gateway Ultra | - | Trådløst access point |
-| Skynet (SSID) | Wireless network | U7 Lite | - | Primært klient-netværk |
-| MacBook Air M4 | Client | Skynet | - | Laptop |
-| iPhone | Client | Skynet | - | Mobiltelefon |
-| iPad 10.2 (9th Gen) | Client | Skynet | - | Tablet |
-| Fedora Workstation | Client | Skynet | - | Desktop/laptop |
-| Skynet IoT (SSID) | Wireless network | U7 Lite | - | IoT-netværk for smarthome-enheder |
-| Echo 1 | IoT device | Skynet IoT | - | Alexa-enhed |
-| Echo 2 | IoT device | Skynet IoT | - | Alexa-enhed |
-| Echo 3 | IoT device | Skynet IoT | - | Alexa-enhed |
-| USW Flex Mini | Switch | Cloud Gateway Ultra | - | Edge switch |
-| homeassistant | Server | USW Flex Mini | - | Home Assistant server |
-| lv-178 | Proxmox VE node | USW Flex Mini | 192.168.1.12 | Proxmox cluster |
-| lv-223 | Proxmox VE node | USW Flex Mini | 192.168.1.11 | Proxmox cluster |
-| lv-426 | Proxmox VE node | USW Flex Mini | 192.168.1.10 | Proxmox cluster |
+| Device | Type | Parent | IP / Hostname | VLAN | Notes |
+|---|---|---|---|---:|---|
+| Internet | Netværk | - | - | - | EWII Bredbånd |
+| Cloud Gateway Ultra | Router / Gateway | Internet | - | 1 | Hovedgateway |
+| moodeaudio | Raspberry Pi | Cloud Gateway Ultra | - | 1 | moodeaudio |
+| U7 Lite | Access point | Cloud Gateway Ultra | - | 1 | Trådløst access point |
+| Skynet (SSID) | Wireless network | U7 Lite | - | 1 | Primært klient-netværk |
+| MacBook Air M4 | Client | Skynet | - | 1 | Laptop |
+| iPhone | Client | Skynet | - | 1 | Mobiltelefon |
+| iPad 10.2 (9th Gen) | Client | Skynet | - | 1 | Tablet |
+| Fedora Workstation | Client | Skynet | - | 1 | Desktop/laptop |
+| Skynet IoT (SSID) | Wireless network | U7 Lite | - | 10 | IoT-netværk for smarthome-enheder |
+| Echo 1 | IoT device | Skynet IoT | - | 10 | Alexa-enhed |
+| Echo 2 | IoT device | Skynet IoT | - | 10 | Alexa-enhed |
+| Echo 3 | IoT device | Skynet IoT | - | 10 | Alexa-enhed |
+| USW Flex Mini | Switch | Cloud Gateway Ultra | - | 1 | Edge switch |
+| homeassistant | Server | USW Flex Mini | - | 1 | Home Assistant server |
+| lv-178 | Proxmox VE node | USW Flex Mini | 192.168.1.12 | 1 | Proxmox cluster |
+| lv-223 | Proxmox VE node | USW Flex Mini | 192.168.1.11 | 1 | Proxmox cluster |
+| lv-426 | Proxmox VE node | USW Flex Mini | 192.168.1.10 | 1 | Proxmox cluster |
 
 ## Forslag til næste skridt
 
