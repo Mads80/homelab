@@ -2,13 +2,6 @@
 
 Personal documentation for my homelab. This README now contains a consolidated overview of infrastructure, network topology and links to installation scripts.
 
-## Contents (TOC)
-
-- Infrastructure
-- Network topology
-- Installation scripts
-- Documentation
-- TODO
 
 ## Hardware
 
