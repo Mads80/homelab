@@ -17,47 +17,33 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 
 ## Simpelt netværksdiagram (kasse-format)
 
-```
-+--------------------+
-|      Internet      |
-+---------+----------+
-          |
-+---------------------------+
-|  Cloud Gateway Ultra      |
-+------+--------+-----------+
-       |        |
-  +----+----+   +-------------+
-  | moode   |   |   U7 Lite   |
-  | audio   |   +--+---+------+ 
-  +---------+      |   |
-                   |   |    +----------------+
-                   |   |    |    Skynet      |
-                   |   |    +--+---+---+-----+
-                   |   |       |   |   |  |
-                   |   |       |   |   |  +-- Fedora PC
-                   |   |       |   |   +----- iPad
-                   |   |       |   +--------- iPhone
-                   |   |       +----------- MacBook Air M4
-                   |   |
-                   |   +----------------+
-                   |                    |
-                   |                +---+-----------+
-                   |                |  Skynet IoT   |
-                   |                +----+---+------+ 
-                   |                     |   |
-                   |                     |   +-- Echo 3
-                   |                     +------ Echo 2
-                   |                            Echo 1
-                   |
-                   +----------------------+
-                   |    USW Flex Mini     |
-                   +----+----+----+-------+
-                        |    |    |
-                        |    |    +-- lv-426 (Proxmox cluster)
-                        |    +------- lv-223 (Proxmox cluster)
-                        +------------ lv-178 (Proxmox cluster)
-                        +------------ homeassistant
-```
+🌍 Internet (EWII)
+│
+└── 🛜 Cloud Gateway Ultra
+    │
+    ├── 🎵 moodeaudio (Raspberry Pi)
+    │
+    ├── 📡 U7 Lite
+    │   │
+    │   ├── 🏠 Skynet
+    │   │   ├── 💻 Fedora Workstation
+    │   │   ├── 🍎 MacBook Air M4
+    │   │   ├── 📱 iPhone
+    │   │   └── 📱 iPad 10.2
+    │   │
+    │   └── 🔒 Skynet IoT
+    │       ├── 🔊 Echo #1
+    │       ├── 🔊 Echo #2
+    │       └── 🔊 Echo #3
+    │
+    └── 🔀 USW Flex Mini
+        │
+        ├── 🏡 Home Assistant
+        │
+        └── 🖥️ Proxmox Cluster
+            ├── lv-178
+            ├── lv-223
+            └── lv-426
 
 ## Forslag til næste skridt
 
@@ -71,4 +57,3 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 
 - Vedligeholdes af: (indsæt navn)
 - Sidst opdateret: 2026-06-05
-
