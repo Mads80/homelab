@@ -6,10 +6,6 @@ Personlig dokumentation til mit homelab.
 
 * Proxmox Cluster
 * Home Assistant
-* Pi-hole / DNS
-* Jellyfin
-* NixOS
-* Fedora Workstation
 
 ## Dokumentation
 
