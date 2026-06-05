@@ -24,13 +24,13 @@ Dette dokument beskriver den nuværende netværkstopologi og liste over aktive s
 | Internet | Netværk | - | - | - | EWII Bredbånd |
 | Cloud Gateway Ultra | Router / Gateway | Internet | 192.168.1.1 | - | Hovedgateway |
 | U7 Lite | Access point (AP) | Cloud Gateway Ultra | 192.168.1.187 | - | Trådløst access point |
-| Skynet (SSID) | Wireless network | U7 Lite | - | - | Primært klient-netværk |
 | USW Flex Mini | Switch | Cloud Gateway Ultra | 192.168.1.168 | - | Edge switch |
 
 ### Servers og endpoints (VLAN 1)
 
 | Device | Type | Parent | IP | Hostname | Notes |
 |---|---|---|---|---|---|
+| Skynet (SSID) | Wireless network | U7 Lite | - | - | Primært klient-netværk |
 | moodeaudio | Raspberry Pi | Cloud Gateway Ultra | 192.168.1.248 | moode.nos | moodeaudio |
 | homeassistant | Server | USW Flex Mini | 192.168.1.103 | ha.nos:8123 | Home Assistant server |
 | MacBook Air M4 | Client | Skynet | 192.168.1.114 | - | Laptop |
