@@ -28,7 +28,7 @@ This section describes the current network topology and active servers.
 | 192.168.1.12 | lv-178.nos | Proxmox VE node (Proxmox cluster) |
 | 192.168.1.248 | moode.nos | moodeaudio |
 
-### Simple network tables
+### Network tables
 
 #### Infrastructure (physical devices and main gateway)
 
@@ -65,37 +65,11 @@ This section describes the current network topology and active servers.
 
 ## Installation scripts
 
-Temporary external script links:
+This section contains an overview of scripts used to install services.
 
 - https://community-scripts.org/scripts/pihole
 - https://community-scripts.org/scripts/haos-vm
-
-## Documentation
-
-### Proxmox
-
-- Cluster
-- Storage
-- Backups
-
-### Home Assistant
-
-- Dashboards
-- Integrations
-- Automations
-
-### Network
-
-- DNS
-- VLANs
-- Firewall
-
-## TODO
-
-* [ ] Document cluster setup
-* [ ] Document DNS setup
-* [ ] Document backup strategy
-* [ ] Add installation guide for NixOS and Fedora Workstation (including starter template, required packages and configuration examples)
+- 
 
 ## Contact & ownership
 
