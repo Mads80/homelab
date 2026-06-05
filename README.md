@@ -1,81 +1,81 @@
 # Homelab Documentation
 
-Personlig dokumentation til mit homelab. Dette README indeholder nu en samlet oversigt over infrastruktur, netværkstopologi og links til installationsscripts.
+Personal documentation for my homelab. This README now contains a consolidated overview of infrastructure, network topology and links to installation scripts.
 
-## Indhold (TOC)
+## Contents (TOC)
 
-- Infrastruktur
-- Netværkstopologi
-- Installationsscripts
-- Dokumentation
+- Infrastructure
+- Network topology
+- Installation scripts
+- Documentation
 - TODO
 
-## Infrastruktur
+## Infrastructure
 
 - Proxmox Cluster
 - Home Assistant
 - Pi-hole
 
-## Netværkstopologi
+## Network topology
 
-Dette afsnit beskriver den nuværende netværkstopologi og liste over aktive servere.
+This section describes the current network topology and active servers.
 
-### Oversigt
+### Overview
 
-- Netværk: 192.168.1.0/24
-- Gateway / Router / Firewall: f.eks. Cloud Gateway Ultra (192.168.1.1)
+- Network: 192.168.1.0/24
+- Gateway / Router / Firewall: e.g. Cloud Gateway Ultra (192.168.1.1)
 
-### Servere
+### Servers
 
-| IP | Hostname | Rolle / noter |
+| IP | Hostname | Role / Notes |
 |---|---|---|
 | 192.168.1.10 | lv-426.nos | Proxmox VE node (Proxmox cluster) |
 | 192.168.1.11 | lv-223.nos | Proxmox VE node (Proxmox cluster) |
 | 192.168.1.12 | lv-178.nos | Proxmox VE node (Proxmox cluster) |
 
-### Simpel netværkstabel
+### Simple network tables
 
-#### Infrastruktur (fysiske enheder og hovedgateway)
+#### Infrastructure (physical devices and main gateway)
 
-| Device | Rolle | Parent | IP | Hostname | Notes |
+| Device | Role | Parent | IP | Hostname | Notes |
 |---|---|---|---|---|---|
-| Internet | Netværk | - | - | - | EWII Bredbånd |
-| Cloud Gateway Ultra | Router / Gateway | Internet | 192.168.1.1 | - | Hovedgateway |
-| U7 Lite | Access point (AP) | Cloud Gateway Ultra | 192.168.1.187 | - | Trådløst access point |
+| Internet | Network | - | - | - | EWII broadband |
+| Cloud Gateway Ultra | Router / Gateway | Internet | 192.168.1.1 | - | Main gateway |
+| U7 Lite | Access point (AP) | Cloud Gateway Ultra | 192.168.1.187 | - | Wireless access point |
 | USW Flex Mini | Switch | Cloud Gateway Ultra | 192.168.1.168 | - | Edge switch |
 
-#### VLAN 1 (primært klient-netværk)
+#### VLAN 1 (primary client network)
 
 | Device | Type | Parent | IP | Hostname | Notes |
 |---|---|---|---|---|---|
-| Skynet (SSID) | Wireless network | U7 Lite | - | - | Primært klient-netværk |
+| Skynet (SSID) | Wireless network | U7 Lite | - | - | Primary client network |
 | moodeaudio | Raspberry Pi | Cloud Gateway Ultra | 192.168.1.248 | moode.nos | moodeaudio |
 | homeassistant | Server | USW Flex Mini | 192.168.1.103 | ha.nos:8123 | Home Assistant server |
 | MacBook Air M4 | Client | Skynet | 192.168.1.114 | - | Laptop |
-| iPhone | Client | Skynet | 192.168.1.225 | - | Mobiltelefon |
+| iPhone | Client | Skynet | 192.168.1.225 | - | Mobile phone |
 | iPad 10.2 (9th Gen) | Client | Skynet | 192.168.1.177 | - | Tablet |
-| Fedora | Client | Skynet | 192.168.1.72 | - | Fedora-baseret workstation |
+| Fedora | Client | Skynet | 192.168.1.72 | - | Fedora-based workstation |
 | lv-178 | Proxmox VE node | USW Flex Mini | 192.168.1.12 | lv-178.nos | Proxmox cluster |
 | lv-223 | Proxmox VE node | USW Flex Mini | 192.168.1.11 | lv-223.nos | Proxmox cluster |
 | lv-426 | Proxmox VE node | USW Flex Mini | 192.168.1.10 | lv-426.nos | Proxmox cluster |
 
-#### VLAN 10 (isoleret IoT-netværk)
+#### VLAN 10 (isolated IoT network)
 
 | Device | Type | Parent | IP | Hostname | Notes |
 |---|---|---|---|---|---|
-| Skynet IoT (SSID) | Wireless network | U7 Lite | - | - | IoT-netværk (isoleret VLAN 10) |
+| Skynet IoT (SSID) | Wireless network | U7 Lite | - | - | IoT network (isolated VLAN 10) |
 | Atomi (wlan0) | IoT device | Skynet IoT | 192.168.10.204 | - | Atomi wlan0 |
 | Atomi (wlan0) | IoT device | Skynet IoT | 192.168.10.104 | - | Atomi wlan0 |
 | Atomi (wlan0) | IoT device | Skynet IoT | 192.168.10.44 | - | Atomi wlan0 |
 
-## Installationsscripts
+## Installation scripts
 
-Foreløbige eksterne scripts (links):
+Temporary external script links:
 
 - https://community-scripts.org/scripts/pihole
 - https://community-scripts.org/scripts/haos-vm
 
-## Dokumentation
+## Documentation
 
 ### Proxmox
 
@@ -86,10 +86,10 @@ Foreløbige eksterne scripts (links):
 ### Home Assistant
 
 - Dashboards
-- Integrationer
-- Automatiseringer
+- Integrations
+- Automations
 
-### Netværk
+### Network
 
 - DNS
 - VLANs
@@ -97,12 +97,12 @@ Foreløbige eksterne scripts (links):
 
 ## TODO
 
-* [ ] Dokumenter cluster setup
-* [ ] Dokumenter DNS setup
-* [ ] Dokumenter backup strategi
-* [ ] Tilføj installationsvejledning for NixOS og Fedora Workstation (inkl. startskabelon, required packages og konfigurations-eksempler)
+* [ ] Document cluster setup
+* [ ] Document DNS setup
+* [ ] Document backup strategy
+* [ ] Add installation guide for NixOS and Fedora Workstation (including starter template, required packages and configuration examples)
 
-## Kontakt og ansvar
+## Contact & ownership
 
-- Vedligeholdes af: Mads
-- Sidst opdateret: 2026-06-05
+- Maintained by: Mads
+- Last updated: 2026-06-05
