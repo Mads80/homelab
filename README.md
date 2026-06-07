@@ -33,19 +33,16 @@ This section describes the current network topology and active servers.
 
 #### VLAN 1 (primary client network)
 
-| IP | Hostname | Role / Notes |
-|---|---|---|
-| 192.168.1.10 | lv-426.nos | Proxmox VE node (Proxmox cluster) |
-| 192.168.1.11 | lv-223.nos | Proxmox VE node (Proxmox cluster) |
-| 192.168.1.12 | lv-178.nos | Proxmox VE node (Proxmox cluster) |
-| 192.168.1.127 | pihole.nos | Pi-hole DNS server |
-| 192.168.1.130 | pihole2.nos | Raspberry Pi 2B — Raspberry Pi OS |
-| 192.168.1.103 | ha.nos:8123 | Home Assistant server |
-| 192.168.1.248 | moode.nos | moodeaudio |
-
 | Device | Type | Parent | IP | Hostname | Notes |
 |---|---|---|---|---|---|
 | Skynet (SSID) | Wireless network | U7 Lite | - | - | Primary client network |
+| lv-426 | Proxmox VE node | USW Flex Mini | 192.168.1.10 | lv-426.nos | Proxmox cluster |
+| lv-223 | Proxmox VE node | USW Flex Mini | 192.168.1.11 | lv-223.nos | Proxmox cluster |
+| lv-178 | Proxmox VE node | USW Flex Mini | 192.168.1.12 | lv-178.nos | Proxmox cluster |
+| Pi-hole (Primary) | DNS Server | USW Flex Mini | 192.168.1.127 | pihole.nos | Pi-hole DNS server |
+| Pi-hole (Secondary) | DNS Server | USW Flex Mini | 192.168.1.130 | pihole2.nos | Raspberry Pi 2B — Raspberry Pi OS |
+| Home Assistant | Server | USW Flex Mini | 192.168.1.103 | ha.nos:8123 | Home Assistant server |
+| moodeaudio | Raspberry Pi | Cloud Gateway Ultra | 192.168.1.248 | moode.nos | moodeaudio |
 
 #### VLAN 10 (isolated IoT network)
 
