@@ -5,6 +5,7 @@ Personal documentation for my homelab. This README now contains a consolidated o
 
 ## Hardware
 - 3× Lenovo ThinkCentre M920q — 16 GB RAM, 256 GB NVMe (boot), 256 GB NVMe (storage)
+- Raspberry Pi 2B — Raspberry Pi OS 32bit, running Pi-hole
 - Raspberry Pi 3 Model B with HiFiBerry AMP+ HAT
 - Cloud Gateway Ultra
 - USW Flex Mini
@@ -64,11 +65,21 @@ This section describes the current network topology and active servers.
 
 This section contains an overview of scripts used to install services.
 
+### Pi-hole
+Network-wide ad-blocking and DNS server installation:
+
+```bash
+git clone --depth 1 https://github.com/pi-hole/pi-hole.git Pi-hole
+cd "Pi-hole/automated install/"
+sudo bash basic-install.sh
+```
+
+### Links
+- https://github.com/pi-hole/pi-hole
 - https://community-scripts.org/scripts/pihole
-- https://community-scripts.org/scripts/haos-vm
-- 
+- https://community-scripts.org/scripts/haos-vm 
 
 ## Contact & ownership
 
 - Maintained by: Mads
-- Last updated: 2026-06-05
+- Last updated: 2026-06-07

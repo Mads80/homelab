@@ -329,6 +329,7 @@
             <h2>🔧 Hardware</h2>
             <ul>
                 <li>3× Lenovo ThinkCentre M920q — 16 GB RAM, 256 GB NVMe (boot), 256 GB NVMe (storage)</li>
+                <li>Raspberry Pi 2B — Raspberry Pi OS 32bit, running Pi-hole</li>
                 <li>Raspberry Pi 3 Model B with HiFiBerry AMP+ HAT</li>
                 <li>Cloud Gateway Ultra</li>
                 <li>USW Flex Mini</li>
@@ -556,16 +557,23 @@
         <section>
             <h2>📦 Installation Scripts</h2>
             <p>This section contains an overview of scripts used to install services.</p>
+            
+            <h3>Pi-hole</h3>
+            <p>Network-wide ad-blocking and DNS server</p>
+            <pre style="background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; padding: 12px; overflow-x: auto; font-size: 11px; margin: 12px 0;">git clone --depth 1 https://github.com/pi-hole/pi-hole.git Pi-hole
+cd "Pi-hole/automated install/"
+sudo bash basic-install.sh</pre>
+            
+            <h3>Installation Links</h3>
             <ul>
-                <li><a href="https://community-scripts.org/scripts/pihole" target="_blank">Pi-hole installation script ↗</a></li>
+                <li><a href="https://github.com/pi-hole/pi-hole" target="_blank">Pi-hole GitHub Repository ↗</a></li>
                 <li><a href="https://community-scripts.org/scripts/haos-vm" target="_blank">HAOS VM installation script ↗</a></li>
             </ul>
 
             <h3>Additional Resources</h3>
-            <p>These scripts provide automated installation for common homelab services:</p>
+            <p>Additional installation methods and resources:</p>
             <ul>
-                <li><strong>Pi-hole:</strong> Network-wide ad-blocking and DNS server</li>
-                <li><strong>HAOS:</strong> Home Assistant Operating System virtual machine</li>
+                <li><a href="https://community-scripts.org/scripts/pihole" target="_blank">Proxmox VE Pi-hole script ↗</a></li>
             </ul>
         </section>
 
