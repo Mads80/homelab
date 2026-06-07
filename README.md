@@ -5,8 +5,8 @@ Personal documentation for my homelab. This README now contains a consolidated o
 
 ## Hardware
 - 3× Lenovo ThinkCentre M920q — 16 GB RAM, 256 GB NVMe (boot), 256 GB NVMe (storage)
-- Raspberry Pi 2B — Raspberry Pi OS 32bit, running Pi-hole
-- Raspberry Pi 3 Model B with HiFiBerry AMP+ HAT
+- Raspberry Pi 3B + HiFiBerry AMP+ HAT
+- Raspberry Pi 2B
 - Cloud Gateway Ultra
 - USW Flex Mini
 - U7 Lite
