@@ -329,8 +329,8 @@
             <h2>🔧 Hardware</h2>
             <ul>
                 <li>3× Lenovo ThinkCentre M920q — 16 GB RAM, 256 GB NVMe (boot), 256 GB NVMe (storage)</li>
-                <li>Raspberry Pi 2B — Raspberry Pi OS 32bit, running Pi-hole</li>
-                <li>Raspberry Pi 3 Model B with HiFiBerry AMP+ HAT</li>
+                <li>Raspberry Pi 3B + HiFiBerry AMP+ HAT</li>
+                <li>Raspberry Pi 2B</li>
                 <li>Cloud Gateway Ultra</li>
                 <li>USW Flex Mini</li>
                 <li>U7 Lite</li>
@@ -372,6 +372,11 @@
                         <td>192.168.1.12</td>
                         <td>lv-178.nos</td>
                         <td>Proxmox VE node (Proxmox cluster)</td>
+                    </tr>
+                    <tr>
+                        <td>192.168.1.130</td>
+                        <td>pihole2.nos</td>
+                        <td>Raspberry Pi OS</td>
                     </tr>
                     <tr>
                         <td>192.168.1.248</td>
@@ -453,11 +458,19 @@
                         <td>Primary client network</td>
                     </tr>
                     <tr>
-                        <td>Pi-hole</td>
+                        <td>Pi-hole1</td>
                         <td>DNS Server</td>
                         <td>USW Flex Mini</td>
                         <td>192.168.1.127</td>
-                        <td>pihole.nos</td>
+                        <td>pihole1.nos</td>
+                        <td>Pi-hole DNS server</td>
+                    </tr>
+                    <tr>
+                        <td>Pi-hole2</td>
+                        <td>DNS Server</td>
+                        <td>USW Flex Mini</td>
+                        <td>192.168.1.130</td>
+                        <td>pihole2.nos</td>
                         <td>Pi-hole DNS server</td>
                     </tr>
                     <tr>
@@ -557,13 +570,13 @@
         <section>
             <h2>📦 Installation Scripts</h2>
             <p>This section contains an overview of scripts used to install services.</p>
-            
+
             <h3>Pi-hole</h3>
             <p>Network-wide ad-blocking and DNS server</p>
             <pre style="background: var(--bg2); border: 1px solid var(--border); border-radius: 4px; padding: 12px; overflow-x: auto; font-size: 11px; margin: 12px 0;">git clone --depth 1 https://github.com/pi-hole/pi-hole.git Pi-hole
 cd "Pi-hole/automated install/"
 sudo bash basic-install.sh</pre>
-            
+
             <h3>Installation Links</h3>
             <ul>
                 <li><a href="https://github.com/pi-hole/pi-hole" target="_blank">Pi-hole GitHub Repository ↗</a></li>
