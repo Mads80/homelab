@@ -705,34 +705,34 @@ sudo bash basic-install.sh</pre>
             <pre class="mermaid">
 graph TD
     %% Internet & Gateway
-    Internet((Internet<br>EWII broadband)) --> Gateway[Cloud Gateway Ultra<br>192.168.1.1]
+    Internet(("Internet<br>EWII broadband")) --> Gateway["Cloud Gateway Ultra<br>192.168.1.1"]
 
     %% Gateway connected devices
-    Gateway --> U7Lite[U7 Lite AP<br>192.168.1.187]
-    Gateway --> FlexMini{USW Flex Mini<br>192.168.1.168}
-    Gateway --> Moode[moodeaudio<br>192.168.1.248]
+    Gateway --> U7Lite["U7 Lite AP<br>192.168.1.187"]
+    Gateway --> FlexMini{"USW Flex Mini<br>192.168.1.168"}
+    Gateway --> Moode["moodeaudio<br>192.168.1.248"]
 
     %% Wired Switch Devices (VLAN 1)
     subgraph VLAN1[VLAN 1 - Primary Client Network]
-        FlexMini --> PVE1[lv-426 Proxmox<br>192.168.1.10]
-        FlexMini --> PVE2[lv-223 Proxmox<br>192.168.1.11]
-        FlexMini --> PVE3[lv-178 Proxmox<br>192.168.1.12]
-        FlexMini --> Pihole1[Pi-hole Primary<br>192.168.1.127]
-        FlexMini --> Pihole2[Pi-hole Secondary<br>192.168.1.130]
-        FlexMini --> HA[Home Assistant<br>192.168.1.103]
+        FlexMini --> PVE1["lv-426 Proxmox<br>192.168.1.10"]
+        FlexMini --> PVE2["lv-223 Proxmox<br>192.168.1.11"]
+        FlexMini --> PVE3["lv-178 Proxmox<br>192.168.1.12"]
+        FlexMini --> Pihole1["Pi-hole Primary<br>192.168.1.127"]
+        FlexMini --> Pihole2["Pi-hole Secondary<br>192.168.1.130"]
+        FlexMini --> HA["Home Assistant<br>192.168.1.103"]
     end
 
     %% U7 Lite Wireless Networks
     subgraph Wireless[Wireless Networks]
-        U7Lite --> Skynet((Skynet SSID<br>VLAN 1))
-        U7Lite --> SkynetIoT((Skynet IoT SSID<br>VLAN 10))
+        U7Lite --> Skynet(("Skynet SSID<br>VLAN 1"))
+        U7Lite --> SkynetIoT(("Skynet IoT SSID<br>VLAN 10"))
     end
 
     %% IoT Devices (VLAN 10)
     subgraph VLAN10[VLAN 10 - Isolated IoT]
-        SkynetIoT --> Atomi1[Atomi wlan0<br>192.168.10.204]
-        SkynetIoT --> Atomi2[Atomi wlan0<br>192.168.10.104]
-        SkynetIoT --> Atomi3[Atomi wlan0<br>192.168.10.44]
+        SkynetIoT --> Atomi1["Atomi wlan0<br>192.168.10.204"]
+        SkynetIoT --> Atomi2["Atomi wlan0<br>192.168.10.104"]
+        SkynetIoT --> Atomi3["Atomi wlan0<br>192.168.10.44"]
     end
 
     %% Styling
@@ -760,7 +760,11 @@ graph TD
     </footer>
 
     <script>
-        mermaid.initialize({ startOnLoad: true });
+        mermaid.initialize({
+            startOnLoad: true,
+            securityLevel: 'loose',
+            theme: 'dark'
+        });
 
         document.addEventListener('DOMContentLoaded', function() {
             const tabBtns = document.querySelectorAll('.tab-btn');
