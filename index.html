@@ -701,16 +701,56 @@ sudo bash basic-install.sh</pre>
     <div class="tab-content" id="network-topology">
         <section>
             <h2>🗺️ Network Topology</h2>
-            <p>Details about the network layout and topology.</p>
+            <p>Visual overview of the infrastructure based on the network tables.</p>
             <pre class="mermaid">
 graph TD
-    A[Internet] --> B(Router);
-    B --> C{Switch};
-    C --> D[Server 1];
-    C --> E[Server 2];
-    C --> F[Workstation];
-    D --> G(Service A);
-    E --> H(Service B);
+    %% Internet & Gateway
+    Internet((Internet<br>EWII broadband)) --> Gateway[Cloud Gateway Ultra<br>192.168.1.1]
+
+    %% Gateway connected devices
+    Gateway --> U7Lite[U7 Lite AP<br>192.168.1.187]
+    Gateway --> FlexMini{USW Flex Mini<br>192.168.1.168}
+    Gateway --> Moode[moodeaudio<br>192.168.1.248]
+
+    %% Wired Switch Devices (VLAN 1)
+    subgraph VLAN1[VLAN 1 - Primary Client Network]
+        FlexMini --> PVE1[lv-426 Proxmox<br>192.168.1.10]
+        FlexMini --> PVE2[lv-223 Proxmox<br>192.168.1.11]
+        FlexMini --> PVE3[lv-178 Proxmox<br>192.168.1.12]
+        FlexMini --> Pihole1[Pi-hole Primary<br>192.168.1.127]
+        FlexMini --> Pihole2[Pi-hole Secondary<br>192.168.1.130]
+        FlexMini --> HA[Home Assistant<br>192.168.1.103]
+    end
+
+    %% U7 Lite Wireless Networks
+    subgraph Wireless[Wireless Networks]
+        U7Lite --> Skynet((Skynet SSID<br>VLAN 1))
+        U7Lite --> SkynetIoT((Skynet IoT SSID<br>VLAN 10))
+    end
+
+    %% IoT Devices (VLAN 10)
+    subgraph VLAN10[VLAN 10 - Isolated IoT]
+        SkynetIoT --> Atomi1[Atomi wlan0<br>192.168.10.204]
+        SkynetIoT --> Atomi2[Atomi wlan0<br>192.168.10.104]
+        SkynetIoT --> Atomi3[Atomi wlan0<br>192.168.10.44]
+    end
+
+    %% Styling
+    classDef gateway fill:#1e4b85,stroke:#4d9eff,stroke-width:2px,color:#fff;
+    classDef switch fill:#1e4b85,stroke:#4d9eff,stroke-width:2px,color:#fff;
+    classDef ssid fill:#1b1b1b,stroke:#b58aff,stroke-width:2px,stroke-dasharray: 5 5,color:#fff;
+    classDef proxmox fill:#2d1b4e,stroke:#b58aff,stroke-width:1px,color:#fff;
+    classDef service fill:#154035,stroke:#5dd674,stroke-width:1px,color:#fff;
+    classDef iot fill:#3d1a1a,stroke:#e05b5b,stroke-width:1px,color:#fff;
+    classDef external fill:#1a1a1a,stroke:#707070,stroke-width:2px,color:#fff;
+
+    class Internet external;
+    class Gateway gateway;
+    class FlexMini switch;
+    class Skynet,SkynetIoT ssid;
+    class PVE1,PVE2,PVE3 proxmox;
+    class Pihole1,Pihole2,HA,Moode service;
+    class Atomi1,Atomi2,Atomi3 iot;
             </pre>
         </section>
     </div>
