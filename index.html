@@ -431,6 +431,7 @@
             line-height: 1.2;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 </head>
 <body>
     <header>
@@ -701,7 +702,16 @@ sudo bash basic-install.sh</pre>
         <section>
             <h2>🗺️ Network Topology</h2>
             <p>Details about the network layout and topology.</p>
-            <!-- Add network topology content here -->
+            <pre class="mermaid">
+graph TD
+    A[Internet] --> B(Router);
+    B --> C{Switch};
+    C --> D[Server 1];
+    C --> E[Server 2];
+    C --> F[Workstation];
+    D --> G(Service A);
+    E --> H(Service B);
+            </pre>
         </section>
     </div>
 
@@ -710,6 +720,8 @@ sudo bash basic-install.sh</pre>
     </footer>
 
     <script>
+        mermaid.initialize({ startOnLoad: true });
+
         document.addEventListener('DOMContentLoaded', function() {
             const tabBtns = document.querySelectorAll('.tab-btn');
             const tabContents = document.querySelectorAll('main > .tab-content');
