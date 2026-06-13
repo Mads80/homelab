@@ -702,7 +702,8 @@ sudo bash basic-install.sh</pre>
         <section>
             <h2>🗺️ Network Topology</h2>
             <p>Visual overview of the infrastructure based on the network tables.</p>
-            <pre class="mermaid">
+            <p><strong>DETTE ER EN TEST</strong></p>
+            <pre class="mermaid" id="mermaid-target">
 graph TD
     %% Internet & Gateway
     Internet(("Internet<br>EWII broadband")) --> Gateway["Cloud Gateway Ultra<br>192.168.1.1"]
@@ -761,7 +762,7 @@ graph TD
 
     <script>
         mermaid.initialize({
-            startOnLoad: true,
+            startOnLoad: false,
             securityLevel: 'loose',
             theme: 'dark'
         });
@@ -783,6 +784,14 @@ graph TD
                     const activeContent = document.getElementById(tabId);
                     if (activeContent) {
                         activeContent.classList.add('active');
+
+                        // Render mermaid only when the tab is visible
+                        if (tabId === 'network-topology') {
+                            const target = document.getElementById('mermaid-target');
+                            if (target && !target.getAttribute('data-processed')) {
+                                mermaid.run({ querySelector: '#mermaid-target' }).catch(console.error);
+                            }
+                        }
                     }
                 });
             });
