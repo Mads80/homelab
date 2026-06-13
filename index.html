@@ -437,6 +437,15 @@
             margin: 0 auto;
             border-radius: 2px;
         }
+
+        @keyframes row-flash {
+            0% { background-color: rgba(77, 158, 255, 0.4); }
+            100% { background-color: transparent; }
+        }
+
+        .flash-row {
+            animation: row-flash 2.5s ease-out !important;
+        }
     </style>
 </head>
 <body>
@@ -505,7 +514,7 @@
 
                     <!-- WAN Layer -->
                     <div class="topo-row">
-                        <div class="node" style="border-color: var(--muted);">
+                        <div class="node" style="border-color: var(--muted);" data-target="row-internet">
                             <div class="n-icon">🌐</div>
                             <div class="n-label">Internet</div>
                             <div class="n-sub">EWII broadband</div>
@@ -518,7 +527,7 @@
                     <div class="topo-row">
                         <div class="bx bx-gateway" style="margin-top: 5px;">
                             <div class="bx-label">Gateway</div>
-                            <div class="node" style="border-color: var(--blue);">
+                            <div class="node" style="border-color: var(--blue);" data-target="row-gateway">
                                 <div class="n-icon">🛡️</div>
                                 <div class="n-label">Cloud Gateway Ultra</div>
                                 <div class="n-sub">192.168.1.1</div>
@@ -530,17 +539,17 @@
 
                     <!-- Core Network Layer -->
                     <div class="topo-row" style="gap: 16px;">
-                        <div class="node" style="border-color: var(--blue);">
+                        <div class="node" style="border-color: var(--blue);" data-target="row-u7lite">
                             <div class="n-icon">📡</div>
                             <div class="n-label">U7 Lite AP</div>
                             <div class="n-sub">192.168.1.187</div>
                         </div>
-                        <div class="node" style="border-color: var(--blue);">
+                        <div class="node" style="border-color: var(--blue);" data-target="row-flexmini">
                             <div class="n-icon">🔀</div>
                             <div class="n-label">USW Flex Mini</div>
                             <div class="n-sub">192.168.1.168</div>
                         </div>
-                        <div class="node" style="border-color: var(--blue);">
+                        <div class="node" style="border-color: var(--blue);" data-target="row-moode">
                             <div class="n-icon">🎵</div>
                             <div class="n-label">moodeaudio</div>
                             <div class="n-sub">192.168.1.248</div>
@@ -557,37 +566,37 @@
                             <div class="bx-label">VLAN 1 · Primary Client Network</div>
                             <div class="topo-row" style="margin-top: 15px;">
                                 <div class="vflex">
-                                    <div class="node" style="border-color: var(--purple);">
+                                    <div class="node" style="border-color: var(--purple);" data-target="row-lv426">
                                         <div class="n-icon">🖥️</div>
                                         <div class="n-label">lv-426 Proxmox</div>
-                                        <div class="n-sub">.10</div>
+                                        <div class="n-sub">192.168.1.10</div>
                                     </div>
-                                    <div class="node" style="border-color: var(--purple);">
+                                    <div class="node" style="border-color: var(--purple);" data-target="row-lv223">
                                         <div class="n-icon">🖥️</div>
                                         <div class="n-label">lv-223 Proxmox</div>
-                                        <div class="n-sub">.11</div>
+                                        <div class="n-sub">192.168.1.11</div>
                                     </div>
-                                    <div class="node" style="border-color: var(--purple);">
+                                    <div class="node" style="border-color: var(--purple);" data-target="row-lv178">
                                         <div class="n-icon">🖥️</div>
                                         <div class="n-label">lv-178 Proxmox</div>
-                                        <div class="n-sub">.12</div>
+                                        <div class="n-sub">192.168.1.12</div>
                                     </div>
                                 </div>
                                 <div class="vflex">
-                                    <div class="node" style="border-color: var(--purple);">
+                                    <div class="node" style="border-color: var(--purple);" data-target="row-pihole1">
                                         <div class="n-icon">🚫</div>
                                         <div class="n-label">Pi-hole Primary</div>
-                                        <div class="n-sub">.127</div>
+                                        <div class="n-sub">192.168.1.127</div>
                                     </div>
-                                    <div class="node" style="border-color: var(--purple);">
+                                    <div class="node" style="border-color: var(--purple);" data-target="row-pihole2">
                                         <div class="n-icon">🚫</div>
                                         <div class="n-label">Pi-hole Secondary</div>
-                                        <div class="n-sub">.130</div>
+                                        <div class="n-sub">192.168.1.130</div>
                                     </div>
-                                    <div class="node" style="border-color: var(--purple);">
+                                    <div class="node" style="border-color: var(--purple);" data-target="row-ha">
                                         <div class="n-icon">🏠</div>
                                         <div class="n-label">Home Assistant</div>
-                                        <div class="n-sub">.103</div>
+                                        <div class="n-sub">192.168.1.103</div>
                                     </div>
                                 </div>
                             </div>
@@ -597,17 +606,17 @@
                         <div class="bx bx-vlan10">
                             <div class="bx-label">VLAN 10 · Isolated IoT</div>
                             <div class="vflex" style="margin-top: 15px;">
-                                <div class="node" style="border-color: var(--green);">
+                                <div class="node" style="border-color: var(--green);" data-target="row-atomi204">
                                     <div class="n-icon">💡</div>
                                     <div class="n-label">Atomi wlan0</div>
                                     <div class="n-sub">192.168.10.204</div>
                                 </div>
-                                <div class="node" style="border-color: var(--green);">
+                                <div class="node" style="border-color: var(--green);" data-target="row-atomi104">
                                     <div class="n-icon">💡</div>
                                     <div class="n-label">Atomi wlan0</div>
                                     <div class="n-sub">192.168.10.104</div>
                                 </div>
-                                <div class="node" style="border-color: var(--green);">
+                                <div class="node" style="border-color: var(--green);" data-target="row-atomi44">
                                     <div class="n-icon">💡</div>
                                     <div class="n-label">Atomi wlan0</div>
                                     <div class="n-sub">192.168.10.44</div>
@@ -640,7 +649,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr id="row-internet">
                         <td>Internet</td>
                         <td>Network</td>
                         <td>-</td>
@@ -648,7 +657,7 @@
                         <td>-</td>
                         <td>EWII broadband</td>
                     </tr>
-                    <tr>
+                    <tr id="row-gateway">
                         <td>Cloud Gateway Ultra</td>
                         <td>Router / Gateway</td>
                         <td>Internet</td>
@@ -656,7 +665,7 @@
                         <td>-</td>
                         <td>Main gateway</td>
                     </tr>
-                    <tr>
+                    <tr id="row-u7lite">
                         <td>U7 Lite</td>
                         <td>Access point (AP)</td>
                         <td>Cloud Gateway Ultra</td>
@@ -664,7 +673,7 @@
                         <td>-</td>
                         <td>Wireless access point</td>
                     </tr>
-                    <tr>
+                    <tr id="row-flexmini">
                         <td>USW Flex Mini</td>
                         <td>Switch</td>
                         <td>Cloud Gateway Ultra</td>
@@ -696,7 +705,7 @@
                         <td>-</td>
                         <td>Primary client network</td>
                     </tr>
-                    <tr>
+                    <tr id="row-lv426">
                         <td>lv-426</td>
                         <td>Proxmox VE node</td>
                         <td>USW Flex Mini</td>
@@ -704,7 +713,7 @@
                         <td>lv-426.nos</td>
                         <td>Proxmox cluster</td>
                     </tr>
-                    <tr>
+                    <tr id="row-lv223">
                         <td>lv-223</td>
                         <td>Proxmox VE node</td>
                         <td>USW Flex Mini</td>
@@ -712,7 +721,7 @@
                         <td>lv-223.nos</td>
                         <td>Proxmox cluster</td>
                     </tr>
-                    <tr>
+                    <tr id="row-lv178">
                         <td>lv-178</td>
                         <td>Proxmox VE node</td>
                         <td>USW Flex Mini</td>
@@ -720,7 +729,7 @@
                         <td>lv-178.nos</td>
                         <td>Proxmox cluster</td>
                     </tr>
-                    <tr>
+                    <tr id="row-pihole1">
                         <td>Pi-hole (Primary)</td>
                         <td>DNS Server</td>
                         <td>USW Flex Mini</td>
@@ -728,7 +737,7 @@
                         <td>pihole.nos</td>
                         <td>Pi-hole DNS server</td>
                     </tr>
-                    <tr>
+                    <tr id="row-pihole2">
                         <td>Pi-hole (Secondary)</td>
                         <td>DNS Server</td>
                         <td>USW Flex Mini</td>
@@ -736,7 +745,7 @@
                         <td>pihole2.nos</td>
                         <td>Raspberry Pi 2B — Raspberry Pi OS</td>
                     </tr>
-                    <tr>
+                    <tr id="row-ha">
                         <td>Home Assistant</td>
                         <td>Server</td>
                         <td>USW Flex Mini</td>
@@ -744,7 +753,7 @@
                         <td>ha.nos:8123</td>
                         <td>Home Assistant server</td>
                     </tr>
-                    <tr>
+                    <tr id="row-moode">
                         <td>moodeaudio</td>
                         <td>Raspberry Pi</td>
                         <td>Cloud Gateway Ultra</td>
@@ -776,7 +785,7 @@
                         <td>-</td>
                         <td>IoT network (isolated VLAN 10)</td>
                     </tr>
-                    <tr>
+                    <tr id="row-atomi204">
                         <td>Atomi (wlan0)</td>
                         <td>IoT device</td>
                         <td>Skynet IoT</td>
@@ -784,7 +793,7 @@
                         <td>-</td>
                         <td>Atomi wlan0</td>
                     </tr>
-                    <tr>
+                    <tr id="row-atomi104">
                         <td>Atomi (wlan0)</td>
                         <td>IoT device</td>
                         <td>Skynet IoT</td>
@@ -792,7 +801,7 @@
                         <td>-</td>
                         <td>Atomi wlan0</td>
                     </tr>
-                    <tr>
+                    <tr id="row-atomi44">
                         <td>Atomi (wlan0)</td>
                         <td>IoT device</td>
                         <td>Skynet IoT</td>
@@ -839,19 +848,38 @@ sudo bash basic-install.sh</pre>
             const tabBtns = document.querySelectorAll('.tab-btn');
             const tabContents = document.querySelectorAll('main > .tab-content');
 
+            // Tab switching logic
             tabBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
                     const tabId = this.getAttribute('data-tab');
 
-                    // Remove active class from all buttons and contents
                     tabBtns.forEach(b => b.classList.remove('active'));
                     tabContents.forEach(content => content.classList.remove('active'));
 
-                    // Add active class to clicked button and corresponding content
                     this.classList.add('active');
                     const activeContent = document.getElementById(tabId);
                     if (activeContent) {
                         activeContent.classList.add('active');
+                    }
+                });
+            });
+
+            // Topology Scroll-to-Detail logic
+            const nodes = document.querySelectorAll('.node[data-target]');
+            nodes.forEach(node => {
+                node.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const targetRow = document.getElementById(targetId);
+
+                    if (targetRow) {
+                        // Scroll smoothly to the row, positioning it in the middle of the screen
+                        targetRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                        // Restart the flash animation by removing and re-adding the class
+                        targetRow.classList.remove('flash-row');
+                        // Force a reflow so the browser restarts the CSS animation
+                        void targetRow.offsetWidth;
+                        targetRow.classList.add('flash-row');
                     }
                 });
             });
